@@ -1,0 +1,1 @@
+NEWS_API_KEY = ENV[“news_api_key”]

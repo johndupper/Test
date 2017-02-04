@@ -1,0 +1,49 @@
+<h1>welcome index works</h1>
+
+<ul>
+  <% @guardian.each do |article| %>
+      <li>
+        <p><%= article["webTitle"] %></p>
+      </li>
+  <% end %>
+</ul>
+
+<hr>
+
+
+<ul>
+  <% @tech_news["articles"].each do |tech| %>
+    <li>
+      <p><%= tech["title"] %></p>
+    </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<ul class="list-group">
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+
+
+<ul>
+  <% @cnn_news["articles"].each do |cnn| %>
+      <li>
+        <p><%= cnn["title"] %></p>
+      </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<ul>
+  <% @ap["articles"].each do |ap| %>
+      <li>
+        <p><%= ap["title"] %></p>
+      </li>
+  <% end %>
+</ul>
