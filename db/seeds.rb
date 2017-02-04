@@ -10,3 +10,10 @@ Source.create(name: "tech_news",
               url: "https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=66944983190c4b47a72a43e3a8605e87",
                  img_url: "http://i.newsapi.org/techcrunch-m.png")
 
+Source.create(name: "cnn_news",
+              url: "https://newsapi.org/v1/articles?source=cnn&apiKey=66944983190c4b47a72a43e3a8605e87",
+              img_url: "http://i.newsapi.org/cnn-m.png")
+
+Source.create(name: "ap_news",
+              url: "https://newsapi.org/v1/articles?source=associated-press&apiKey=66944983190c4b47a72a43e3a8605e87",
+              img_url: "http://i.newsapi.org/associated-press-m.png")
