@@ -11,6 +11,7 @@ class WelcomeController < ApplicationController
     tech_response = HTTParty.get(tech_url)
     tech_news = tech_response.parsed_response
     @tech_news = tech_news
+    @tech_news_image = "does this work?"
 
     cnn_url = 'https://newsapi.org/v1/articles?source=cnn&apiKey=66944983190c4b47a72a43e3a8605e87'
     cnn_response = HTTParty.get(cnn_url)
