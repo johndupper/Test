@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
     guardian_news = guardian_news_response["response"]["results"]
     @guardian = guardian_news
 
-    tech_url = "https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=#{NEWS_API_KEY}"
+    tech_url = "https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=66944983190c4b47a72a43e3a8605e87"
     tech_response = HTTParty.get(tech_url)
     tech_news = tech_response.parsed_response
     @tech_news = tech_news
