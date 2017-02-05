@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>News</title>
+    <title>Relevant</title>
+    <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <%= render 'nav' %>
+  <!--render partial-->
     <%= yield %>
   </body>
 </html>

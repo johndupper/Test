@@ -14,3 +14,17 @@
  *= require_tree .
  *= require_self
  */
+
+/* site wide */
+
+body {
+    padding-top: 70px;
+    font-family: 'Cuprum', sans-serif;
+}
+
+/* navigation */
+
+.navbar-brand {
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
