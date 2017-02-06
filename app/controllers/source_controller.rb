@@ -1,7 +1,7 @@
 class SourceController < ApplicationController
 
   def index
-    @all = Source.all
+    @sources = Source.all
   end
 
   def show
