@@ -1,11 +1,1 @@
 <h1>welcome index page</h1>
-
-<% @sources.each do |source| %>
-    <h4>Source: <%= source.name %></h4>
-
-    <img src="<%= source.img_url %>"
-         alt="<%= source.name %>">
-
-    <h5>URL: <%= source.url %></h5>
-    <br>
-<% end %>
