@@ -28,3 +28,8 @@ body {
     font-size: 3rem;
     letter-spacing: 5px;
 }
+
+.thumbnail {
+    max-height: 100%;
+    max-width: 100%;
+}
