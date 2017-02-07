@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 require 'httparty'
 require 'open-uri'
 require 'nokogiri'
@@ -15,7 +6,7 @@ require 'nokogiri'
 doc = Nokogiri::HTML(open("https://newsapi.org/sources"))
 news_source_list = doc.css('.source')
 
-# for each <div> (that is a news source):
+# iterate through each <div> (that is a news source):
 news_source_list.each do |news_source|
   # news source name
   name = news_source.css('.logo').attribute('title')
@@ -29,7 +20,7 @@ news_source_list.each do |news_source|
   # create news source instances if url is valid
   if api_response["status"] == "ok"
 
-    # get the url of the image from out of the inline html style tag
+    # get the url of the image from the inline html style tag
     image = news_source.css('.logo').attribute('style')
     image_string = image.to_s.sub('background-image:url(', '').chomp(')')
 
