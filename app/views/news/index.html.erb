@@ -1,5 +1,5 @@
 <div class="row">
-  <% @all_news.each do |source| %>
+  <% @sources.each do |source| %>
 
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
@@ -8,7 +8,11 @@
             <h3><%= source.name %></h3>
 
             <ul class="list-group">
-              <li class="list-group-item">Cras justo odio</li>
+              <% source.headline.each do |headline| %>
+              <li>
+                <h6><%= headline %></h6>
+              </li>
+              <% end %>
             </ul>
 
             <p><a href="#" class="btn btn-primary" role="button">Button</a>
