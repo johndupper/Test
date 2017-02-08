@@ -1,3 +1,7 @@
-<h1>Yaas honey!</h1>
-
-<h4>Input ID: <%= @input_id %></h4>
+<ul>
+  <% @sources.each do |news_source| %>
+      <li><%= news_source.name %></li>
+      <li><%= news_source.url %></li>
+      <li><%= news_source.img_url %></li>
+  <% end %>
+</ul>
