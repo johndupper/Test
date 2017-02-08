@@ -5,12 +5,12 @@
         <div class="thumbnail">
           <img src="<%= source.img_url %>" alt="<%= source.name %>">
           <div class="caption">
-            <h3><%= source.name %></h3>
+            <h2><%= source.name %></h2>
 
             <ul class="list-group">
               <% source.headline.each do |headline| %>
               <li>
-                <h6><%= headline %></h6>
+                <h3><%= headline %></h3>
               </li>
               <% end %>
             </ul>
