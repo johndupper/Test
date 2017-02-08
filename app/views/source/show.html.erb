@@ -1,0 +1,14 @@
+<ul class="list-group">
+
+  <% @all_sources.each do |source| %>
+      <% if source.user_id == current_user.id %>
+          <li class="list-group-item">SAVED SOURCE: <%= source.name %></li>
+      <% else %>
+          <li class="list-group-item"><%= source.name %>
+            <a href="/source/<%= source.id %>">
+              <button type="button" class="btn btn-danger">Add</button>
+            </a>
+          </li>
+      <% end %>
+  <% end %>
+</ul>
