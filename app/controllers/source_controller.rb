@@ -6,17 +6,17 @@ class SourceController < ApplicationController
   end
 
   def show
-      @all_sources = Source.all
-      @user_sources = Source.where(user_id: current_user.id)
+      @all_sources = Source.all.order(:name)
+      @user_sources = @all_sources.where(user_id: current_user.id)
 
       if params[:id] != "show"
-        puts "#######################################"
-        puts "SHOW PASSED A PARAMETER: #{params[:id]}"
         @change_source = Source.find_by_id(params[:id])
-        puts @change_source.name
-        puts "#######################################"
+        if @change_source.user_id == nil
+          @change_source.update(user_id: current_user.id)
+        else
+          @change_source.update(user_id: nil)
+        end
         render :show
-      else
     end
   end
 end

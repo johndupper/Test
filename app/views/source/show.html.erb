@@ -2,11 +2,15 @@
 
   <% @all_sources.each do |source| %>
       <% if source.user_id == current_user.id %>
-          <li class="list-group-item">SAVED SOURCE: <%= source.name %></li>
+          <li class="list-group-item"><%= source.name %>
+            <a href="/source/<%= source.id %>">
+              <button type="button" class="btn btn-danger">Remove</button>
+            </a>
+          </li>
       <% else %>
           <li class="list-group-item"><%= source.name %>
             <a href="/source/<%= source.id %>">
-              <button type="button" class="btn btn-danger">Add</button>
+              <button type="button" class="btn btn-success">Add</button>
             </a>
           </li>
       <% end %>
