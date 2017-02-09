@@ -19,4 +19,4 @@
 .idea
 .idea/
 
-secrets.sh
+secrets.sh.env
