@@ -5,16 +5,20 @@
         <div class="thumbnail">
           <div class="caption">
             <h2><%= source.name %></h2>
-            <ul>
+
+
+            <ul class="list-group">
               <% source.article.each do |article| %>
-                  <li>
+                  <li class="list-group-item">
                     <a href="<%= article["url"] %>" target="_blank">
                       <h4><%= article["title"] %></h4>
                     </a>
                     <p><%= article["description"] %></p>
+                    <button type="button" class="btn btn-info btn-xs">Email Article</button>
                   </li>
               <% end %>
             </ul>
+
           </div>
         </div>
       </div>
