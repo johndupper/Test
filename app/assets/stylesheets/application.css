@@ -20,6 +20,7 @@
 body {
     padding-top: 70px;
     font-family: 'Cuprum', sans-serif;
+    background-image: url('/newspapers.jpg');
 }
 
 /* navigation */
@@ -30,6 +31,10 @@ body {
 }
 
 /* thumbnails */
+
+.thumbnail {
+    background: rgba(255, 255, 255, 0.75);
+}
 
 .caption h2 {
     font-size: 4rem;

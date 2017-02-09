@@ -11,16 +11,22 @@ class NewsController < ApplicationController
 
       # if response is good
       if api_response["status"] == "ok"
-        # turn api response into array of articles
-        news_array = api_response["articles"]
-        # loop through articles, add title only
-        headlines = []
-        news_array.each do |story|
-          # array of headlines
-          headlines.push(story["title"])
-        end
 
-        news_source.headline = headlines
+        # turn api response into array of articles
+        articles = api_response["articles"]
+        puts articles.class
+        news_source.article = articles
+        # puts news_source.articles = api_response["articles"]
+
+        # loop through articles
+        # articles = []
+        # news_array.each do |story|
+          # array of headlines
+          # articles.push(story)
+      # end
+
+        # news_source.articles = headlines
+
       end # :: if status
     end   # :: each loop
   end
