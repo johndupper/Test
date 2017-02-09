@@ -2,10 +2,9 @@
 <div class="row">
   <% @all_sources.each do |source| %>
       <div class="col-sm-6 col-md-3">
-        <div class="thumbnail">
-          <!-- image goes here -->
+        <div class="thumbnail sources">
+          <img class="sources-img" src="<%= source.img_url %>" alt="">
           <div class="caption">
-            <h3><%= source.name %></h3>
             <p>
               <% if source.user_id == current_user.id %>
                   <a href="/source/<%= source.id %>">

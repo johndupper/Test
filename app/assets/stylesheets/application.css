@@ -36,12 +36,21 @@ body {
     background: rgba(255, 255, 255, 0.75);
 }
 
+.sources {
+    height: 150px;
+}
+
 .list-group-item {
     background: rgba(255, 255, 255, 0.6);
 }
 
 .list-group-item:hover {
     background: rgba(255, 255, 255, 0.75);
+}
+
+img {
+    max-height: 100px;
+    max-width: 100px;
 }
 
 .caption h2 {
