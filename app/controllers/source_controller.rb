@@ -1,10 +1,6 @@
 class SourceController < ApplicationController
   load_and_authorize_resource  only: [:edit, :update, :destroy]
 
-  def index
-    @sources = Source.all
-  end
-
   # refactor to clean up url
   def show
       @all_sources = Source.all.order(:name)
