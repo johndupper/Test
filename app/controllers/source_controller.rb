@@ -5,6 +5,7 @@ class SourceController < ApplicationController
     @sources = Source.all
   end
 
+  # refactor to clean up url
   def show
       @all_sources = Source.all.order(:name)
       @user_sources = @all_sources.where(user_id: current_user.id)
@@ -16,7 +17,7 @@ class SourceController < ApplicationController
         else
           @change_source.update(user_id: nil)
         end
-        render :show
-    end
+        redirect_to :back
+      end
   end
 end
