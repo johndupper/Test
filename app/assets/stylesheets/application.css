@@ -57,7 +57,6 @@ input[type=submit] {
 }
 input[type=submit]:hover {  background: white;  }
 .new_user ~ a {  display: none;  }
-
 /* transparent & hover effects for articles */
 .thumbnail {  background: rgba(255, 255, 255, 0.6)  }
 .list-group-item {  background: rgba(255, 255, 255, 0.65);  }

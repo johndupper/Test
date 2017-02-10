@@ -1,24 +1,20 @@
 <div class="row">
   <% @all_sources.each do |source| %>
       <div class="col-sm-6 col-md-3">
-
+        <!-- toggle subscription -->
         <% if source.user_id == current_user.id %>
             <a href="/source/<%= source.id %>">
               <div class="thumbnail sources user-source">
-                <img src="<%= source.img_url %>"
-                     alt="<%= source.name %>"> <!-- image -->
-              </div> <!-- each thumbnail div-->
+                <img src="<%= source.img_url %>" alt="<%= source.name %>">
+              </div>
             </a>
             <% else %>
             <a href="/source/<%= source.id %>">
               <div class="thumbnail sources not-user-source">
-                <img src="<%= source.img_url %>"
-                     alt="<%= source.name %>"> <!-- image -->
-              </div> <!-- each thumbnail div-->
+                <img src="<%= source.img_url %>" alt="<%= source.name %>"> <!-- image -->
+              </div>
             </a>
         <% end %>
-
-      </div> <!-- responsive container -->
+      </div>
   <% end %>
-</div> <!-- outer most container-->
-
+</div>

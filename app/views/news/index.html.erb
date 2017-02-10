@@ -1,12 +1,11 @@
-<!-- show news page -->
 <div class="row">
   <% @sources.each do |source| %>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <img class="sources-img" src="<%= source.img_url %>" alt="">
           <div class="caption">
-
             <ul class="list-group">
+              <!-- iterate headlines -->
               <% source.article.each do |article| %>
                   <li class="list-group-item">
                     <a href="<%= article["url"] %>" target="_blank">
@@ -16,7 +15,6 @@
                   </li>
               <% end %>
             </ul>
-
           </div>
         </div>
       </div>

@@ -9,10 +9,9 @@
   </head>
 
   <body>
-
+<!-- navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
@@ -22,13 +21,14 @@
         </button>
         <a class="navbar-brand" href="/">RELEVANT</a>
       </div>
-
+      <!-- navigation links -->
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <!-- nav links -->
           <li><a href="/news">My News</a></li>
           <li><a href="/source/show">Manage Sources</a></li>
         </ul>
+        <!-- user signup, login messages -->
         <ul class="nav navbar-nav navbar-right">
           <p class="navbar-text"><%= notice %></p>
           <p class="navbar-text"><%= alert %></p>
@@ -39,7 +39,7 @@
               <li><%= link_to "Login", new_user_session_path  %></li>
           <% end %>
         </ul>
-      </div><!--/.nav-collapse -->
+      </div>
     </div>
   </nav>
 
