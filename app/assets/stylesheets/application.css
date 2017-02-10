@@ -16,7 +16,6 @@
  */
 
 /* site wide */
-
 body {
     padding-top: 70px;
     font-family: 'Cuprum', sans-serif;
@@ -24,36 +23,30 @@ body {
 }
 
 /* navigation */
-
 .navbar-brand {
     font-size: 3.5rem;
     letter-spacing: 5px;
 }
 
-/* thumbnails */
+.notice, .alert {
+    color: white;
+    font-size: 4rem;
+}
 
+/* transparent & hover effects for articles */
 .thumbnail {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.6)
 }
+.list-group-item {  background: rgba(255, 255, 255, 0.65);  }
+.list-group-item:hover {  background: rgba(255, 255, 255, 0.8);  }
 
-.sources {
-    height: 150px;
-}
-
-.list-group-item {
-    background: rgba(255, 255, 255, 0.6);
-}
-
-.list-group-item:hover {
-    background: rgba(255, 255, 255, 0.75);
-}
-
+/* make images uniform */
 img {
     max-height: 100px;
     max-width: 100px;
 }
 
-.caption h2 {
-    font-size: 4rem;
-    text-align: center;
-}
+/* news sources */
+.sources {  height: 125px;  }
+.user-source {  background: rgba(152,251,152, 0.65);  }
+.not-user-source {  background: rgba(255,255,255, 0.65);  }

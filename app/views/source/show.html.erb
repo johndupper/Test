@@ -1,23 +1,24 @@
-<!--sources edit page -->
 <div class="row">
   <% @all_sources.each do |source| %>
       <div class="col-sm-6 col-md-3">
-        <div class="thumbnail sources">
-          <img class="sources-img" src="<%= source.img_url %>" alt="">
-          <div class="caption">
-            <p>
-              <% if source.user_id == current_user.id %>
-                  <a href="/source/<%= source.id %>">
-                    <button type="button" class="btn btn-danger">Remove</button>
-                  </a>
-              <% else %>
-                  <a href="/source/<%= source.id %>">
-                    <button type="button" class="btn btn-success">Add</button>
-                  </a>
-              <% end %>
-            </p>
-          </div>
-        </div>
-      </div>
+
+        <% if source.user_id == current_user.id %>
+            <a href="/source/<%= source.id %>">
+              <div class="thumbnail sources user-source">
+                <img src="<%= source.img_url %>"
+                     alt="<%= source.name %>"> <!-- image -->
+              </div> <!-- each thumbnail div-->
+            </a>
+            <% else %>
+            <a href="/source/<%= source.id %>">
+              <div class="thumbnail sources not-user-source">
+                <img src="<%= source.img_url %>"
+                     alt="<%= source.name %>"> <!-- image -->
+              </div> <!-- each thumbnail div-->
+            </a>
+        <% end %>
+
+      </div> <!-- responsive container -->
   <% end %>
-</div>
+</div> <!-- outer most container-->
+

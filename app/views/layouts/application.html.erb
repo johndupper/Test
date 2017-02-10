@@ -29,25 +29,19 @@
           <li><a href="/news">My News</a></li>
           <li><a href="/source/show">Manage Sources</a></li>
         </ul>
-
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Weather Spot</a></li>
+          <p class="navbar-text"><%= notice %></p>
+          <p class="navbar-text"><%= alert %></p>
+          <% if user_signed_in? %>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <li><%= link_to "Login", new_user_session_path  %></li>
+          <% end %>
         </ul>
-
       </div><!--/.nav-collapse -->
     </div>
   </nav>
-
-  <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "Login", new_user_session_path  %>
-  <% end %>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
   <%= yield %>
 

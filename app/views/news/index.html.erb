@@ -3,9 +3,8 @@
   <% @sources.each do |source| %>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
+          <img class="sources-img" src="<%= source.img_url %>" alt="">
           <div class="caption">
-            <h2><%= source.name %></h2>
-
 
             <ul class="list-group">
               <% source.article.each do |article| %>
