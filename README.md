@@ -8,7 +8,12 @@ Relevant is a full-stack Ruby on Rails web application that allows you to stay u
     * [CanCanCan](https://github.com/CanCanCommunity/cancancan "Cancancan Docs")
     * [HTTParty](http://johnnunemaker.com/httparty/ "Makes HTTP fun again!")
     * [Awesome Print](https://github.com/awesome-print/awesome_print "Console")
-> Relevant would not be possible without the incredible gift of [NewsAPI](https://newsapi.org/ "newsapi.org"). Throughout the development of this platform, they've allowed me to pummel their servers without a blink of an eye. Thank you!
+    
+> Relevant would not be possible without the incredible gift 
+> of [NewsAPI](https://newsapi.org/ "newsapi.org"). Throughout the 
+> development of this platform, they've allowed me to pummel their 
+> servers without a blink of an eye. Thank you!
+
 ### Running Relevant Locally
 Relevant is written in Ruby (v 2.3.1).
 Relevant is written in Ruby on Rails (v 5.0.1).
