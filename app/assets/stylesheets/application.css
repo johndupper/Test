@@ -21,31 +21,52 @@ body {
     font-family: 'Cuprum', sans-serif;
     background-image: url('/newspapers.jpg');
 }
-
 /* navigation */
 .navbar-brand {
     font-size: 3.5rem;
     letter-spacing: 5px;
 }
-
-.notice, .alert {
-    color: white;
-    font-size: 4rem;
+/* manipulating the devise user forms */
+h2:first-of-type {  display: none;  }
+.new_user {
+    width: 60%;
+    margin: 10% auto;
+    padding: 5%;
+    background: rgba(255, 255, 255, 0.65);
+    text-align: center;
+    border-radius: 2%;
 }
+.new_user label {  font-size: 2.5rem;  }
+.new_user input {
+    width: 50%;
+    height: 3rem;
+    margin: 1%;
+    border: none;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+#user_remember_me {  display: none;  }
+label[for=user_remember_me] {  display: none;  }
+input[type=submit] {
+    height: 4rem;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    font-size: 2.5rem;
+}
+input[type=submit]:hover {  background: white;  }
+.new_user ~ a {  display: none;  }
 
 /* transparent & hover effects for articles */
-.thumbnail {
-    background: rgba(255, 255, 255, 0.6)
-}
+.thumbnail {  background: rgba(255, 255, 255, 0.6)  }
 .list-group-item {  background: rgba(255, 255, 255, 0.65);  }
 .list-group-item:hover {  background: rgba(255, 255, 255, 0.8);  }
-
 /* make images uniform */
 img {
     max-height: 100px;
     max-width: 100px;
 }
-
 /* news sources */
 .sources {  height: 125px;  }
 .user-source {  background: rgba(152,251,152, 0.65);  }
