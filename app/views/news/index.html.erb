@@ -4,7 +4,9 @@
         <div class="thumbnail">
           <img class="sources-img" src="<%= source.img_url %>" alt="">
           <div class="caption">
+            <div class="gallery">
             <ul class="list-group">
+
               <!-- iterate headlines -->
               <% source.article.each do |article| %>
                   <li class="list-group-item">
@@ -14,7 +16,9 @@
                     <p><%= article["description"] %></p>
                   </li>
               <% end %>
+
             </ul>
+            </div>
           </div>
         </div>
       </div>

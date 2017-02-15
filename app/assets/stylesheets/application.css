@@ -21,11 +21,13 @@ body {
     font-family: 'Cuprum', sans-serif;
     background-image: url('/newspapers.jpg');
 }
+
 /* navigation */
 .navbar-brand {
     font-size: 3.5rem;
     letter-spacing: 5px;
 }
+
 /* manipulating the devise user forms */
 h2:first-of-type {  display: none;  }
 .new_user {
@@ -57,16 +59,33 @@ input[type=submit] {
 }
 input[type=submit]:hover {  background: white;  }
 .new_user ~ a {  display: none;  }
+
 /* transparent & hover effects for articles */
 .thumbnail {  background: rgba(255, 255, 255, 0.6)  }
 .list-group-item {  background: rgba(255, 255, 255, 0.65);  }
 .list-group-item:hover {  background: rgba(255, 255, 255, 0.8);  }
+
 /* make images uniform */
 img {
     max-height: 100px;
     max-width: 100px;
 }
+
 /* news sources */
 .sources {  height: 125px;  }
 .user-source {  background: rgba(152,251,152, 0.65);  }
 .not-user-source {  background: rgba(255,255,255, 0.65);  }
+
+
+/* scroll feature */
+.gallery {
+    margin: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 0;
+    width: 90%;
+    height: 48vw;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100%);
+    scroll-snap-destination: 50% 50%;
+}
