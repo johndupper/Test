@@ -5,6 +5,7 @@ class SourceController < ApplicationController
       @all_sources = Source.all.order(:name)
       @user_sources = @all_sources.where(user_id: current_user.id)
       # if show route has a hidden parameter
+
       if params[:id] != "show"
         @change_source = Source.find_by_id(params[:id])
         if @change_source.user_id == nil
