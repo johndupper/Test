@@ -1,19 +1,29 @@
 
-describe('relevant', function () {
+// RELEVANT TESTING
+describe('relevant', function() {
 
     beforeEach(function () {
+        // reset state, local storage, clear cookies
+    })
+
+    // page title
+    it('should have correct <title>', function() {
         cy.visit('http://localhost:3000')
+        // subject        chaining      value
+        cy.title().should('include', 'Relevant')
     })
 
-    it('has valid title', function () {
-        cy.get('.navbar-brand')
-            .should('not.be.empty')
+    // navigation elements
+    it('should contain nav elements', function() {
+        // first (chaining)
+        cy.get('#navbar').find('ul').children('li')
+            .find('a').first().should('contain', 'My News')
+
+        // second
+        cy.get('#navbar').contains('Manage Sources')
     })
 
-        it('has navigation links', function () {
-            cy.get('.navbar-nav')
-                .find('li').first()
-                .contains('My News')
-        })
-    })
-})
+    // signup, login
+    // it('should prompt for login', function () {})
+
+}) // end testing
