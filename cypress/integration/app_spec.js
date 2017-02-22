@@ -7,6 +7,26 @@ describe('initial page load', function() {
         // reset state, local storage, clear cookies
     })
 
+    it('should have correct title', function() {
+        cy.visit('http://localhost:3000')
+        cy.title().should('include', 'Relevant')
+    })
+
+    it('should contain "My News" link', function() {
+        // first element (chaining)
+        cy.get('#navbar').find('ul').children('li')
+            .find('a').first().should('contain', 'My News')
+    })
+
+    it('should contain "Manage Sources" link', function() {
+        // second element (should v. contains)
+        cy.get('#navbar').contains('Manage Sources')
+    })
+
+    it('should have four links in navbar', function() {
+        cy.get('li').should("have.length", 4)
+    })
+
     it(' /news should redirect to sign in URL', function() {
         // redirect
         cy.visit('/')
@@ -14,6 +34,7 @@ describe('initial page load', function() {
     })
 
     it('/sources should redirect to sign in URL', function() {
+        // redirect (second way)
         cy.request({
             url: '/source/show',
             followRedirect: false
@@ -23,20 +44,16 @@ describe('initial page load', function() {
         })
     })
 
-    it('should have correct title', function() {
-        cy.visit('http://localhost:3000')
-        cy.title().should('include', 'Relevant')
+    it('should prompt user to sign up or log in', function() {
+        cy.get('.navbar-text').should('contain', 'You need to sign in or sign up before continuing.')
     })
-
-    it('should contain nav elements', function() {
-        // first element (chaining)
-        cy.get('#navbar').find('ul').children('li')
-            .find('a').first().should('contain', 'My News')
-        // second element
-        cy.get('#navbar').contains('Manage Sources')
-    })
-
-    it('should show log in form', function() {})
 })
 
 
+describe('login: unknown user', function() {
+    it('should fail authorization', function() {
+        //
+    })
+
+    it('should show error message', function () {})
+})
