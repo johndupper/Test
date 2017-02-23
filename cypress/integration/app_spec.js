@@ -2,6 +2,7 @@
 // RELEVANT TESTING
 Cypress.config('baseUrl', 'http://localhost:3000')
 
+
 describe('initial page load', function() {
     beforeEach(function () {
         // reset state, local storage, clear cookies
@@ -23,7 +24,7 @@ describe('initial page load', function() {
         cy.get('#navbar').contains('Manage Sources')
     })
 
-    it('should have four links in navbar', function() {
+    it('should have four links in navbar pre-user', function() {
         cy.get('li').should("have.length", 4)
     })
 
@@ -50,10 +51,28 @@ describe('initial page load', function() {
 })
 
 
-describe('login: unknown user', function() {
-    it('should fail authorization', function() {
-        //
+describe('login functionality', function() {
+    it('should fail login with invalid user', function() {
+        cy.get("form").within(function(){
+            cy
+                .get("input[name='user[email]']").type('fail@cypress.com')
+                .get("input[name='user[password]']").type('test123')
+                .root().submit()
+            cy
+                .url().should('include', '/users/sign_in')
+        })
+            cy.get('.navbar-text').should('contain', 'Invalid Email or password.')
     })
 
-    it('should show error message', function () {})
+    beforeEach(function() {
+        cy.visit('/users/sign_in')
+    })
+    it('should login with known user successfully', function() {
+        cy.get("form").within(function(){
+            cy
+                .get("input[name='user[email]']").type('test@cypress.com')
+                .get("input[name='user[password]']").type('test123')
+                .root().submit()
+        })
+    })
 })
