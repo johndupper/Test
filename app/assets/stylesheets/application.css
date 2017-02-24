@@ -78,14 +78,14 @@ img {
 
 
 /* scroll feature */
-.gallery {
-    margin: auto;
-    overflow-y: auto;
-    overflow-x: hidden;
-    font-size: 0;
-    width: 90%;
-    height: 48vw;
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100%);
-    scroll-snap-destination: 50% 50%;
-}
+/*.gallery {*/
+    /*margin: auto;*/
+    /*overflow-y: auto;*/
+    /*overflow-x: hidden;*/
+    /*font-size: 0;*/
+    /*width: 90%;*/
+    /*height: 48vw;*/
+    /*scroll-snap-type: mandatory;*/
+    /*scroll-snap-points-y: repeat(100%);*/
+    /*scroll-snap-destination: 50% 50%;*/
+/*}*/

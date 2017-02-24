@@ -1,13 +1,16 @@
+var login = function(username, password) {
+    cy.reload()
+    cy.get("form").within(function() {
+        cy.get("input[name='user[email]']").type(username)
+            .get("input[name='user[password]']").type(password)
+            .root().submit()
+    })
+};
 
-// RELEVANT TESTING
 Cypress.config('baseUrl', 'http://localhost:3000')
 
 
 describe('initial page load', function() {
-    beforeEach(function () {
-        // reset state, local storage, clear cookies
-    })
-
     it('should have correct title', function() {
         cy.visit('http://localhost:3000')
         cy.title().should('include', 'Relevant')
@@ -24,18 +27,21 @@ describe('initial page load', function() {
         cy.get('#navbar').contains('Manage Sources')
     })
 
-    it('should have four links in navbar pre-user', function() {
-        cy.get('li').should("have.length", 4)
+    it('should have four links in navbar (pre-user)', function() {
+        cy.get('li').should('have.length', 4)
     })
 
-    it(' /news should redirect to sign in URL', function() {
-        // redirect
-        cy.visit('/')
-            .url().should('include', '/users/sign_in')
+    it('should redirect /news to sign in URL', function() {
+        cy.request({
+            url: '/news',
+            followRedirect: false
+        }).then(function(res) {
+            expect(res.status).to.eq(302)
+            expect(res.redirectedToUrl).to.eq('http://localhost:3000/users/sign_in')
+        })
     })
 
-    it('/sources should redirect to sign in URL', function() {
-        // redirect (second way)
+    it('should redirect /sources to sign in URL', function() {
         cy.request({
             url: '/source/show',
             followRedirect: false
@@ -46,33 +52,23 @@ describe('initial page load', function() {
     })
 
     it('should prompt user to sign up or log in', function() {
-        cy.get('.navbar-text').should('contain', 'You need to sign in or sign up before continuing.')
+        cy.get('.navbar-text')
+            .should('contain', 'You need to sign in or sign up before continuing.')
     })
 })
 
 
-describe('login functionality', function() {
-    it('should fail login with invalid user', function() {
-        cy.get("form").within(function(){
-            cy
-                .get("input[name='user[email]']").type('fail@cypress.com')
-                .get("input[name='user[password]']").type('test123')
-                .root().submit()
-            cy
-                .url().should('include', '/users/sign_in')
-        })
-            cy.get('.navbar-text').should('contain', 'Invalid Email or password.')
+describe('invalid login attempt', function() {
+    it('should fail login with invalid user', function () {
+        login('fail@cypress.com', 'test123')
+        cy.url().should('include', '/users/sign_in')
+        cy.get('.navbar-text').should('contain', 'Invalid Email or password.')
     })
+})
 
-    beforeEach(function() {
-        cy.visit('/users/sign_in')
-    })
-    it('should login with known user successfully', function() {
-        cy.get("form").within(function(){
-            cy
-                .get("input[name='user[email]']").type('test@cypress.com')
-                .get("input[name='user[password]']").type('test123')
-                .root().submit()
-        })
+
+describe('valid login attempt', function() {
+    it('should login with valid user', function() {
+        login('test@cypress.com', 'test123')
     })
 })
