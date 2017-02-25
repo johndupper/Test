@@ -70,5 +70,7 @@ describe('invalid login attempt', function() {
 describe('valid login attempt', function() {
     it('should login with valid user', function() {
         login('test@cypress.com', 'test123')
+        cy.url().should('include', '/')
+        cy.get('.navbar-text').should('contain', 'Signed in successfully.')
     })
 })
